@@ -2,14 +2,12 @@ from django.urls import path, include
 
 from rest_framework.routers import DefaultRouter
 
-
 from profile_api import views
 
 router = DefaultRouter()
 router.register('hello-viewset', views.HellowViewSet ,base_name='hello-viewset')
-#Name of the router, class name, base name
 router.register('profile', views.UserProfileViewSet)
-
+router.register('feed', views.UserProfileFeedViewSet)
 
 urlpatterns = [
     path('hello-view/', views.HelloApiView.as_view()),
